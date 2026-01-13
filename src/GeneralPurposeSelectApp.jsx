@@ -1,3 +1,5 @@
+import Dropdown from './Dropdown'
+
 const starWarsOptions = {
   rey: "Rey",
   luke: "Luke Skywalker",
@@ -15,15 +17,14 @@ const petOptions = {
 
 
 export default function App() {
+  const evens = [ 2, 4, 6, 8, 10, 12, 14, 16 ]
   return (
     <form>
-      <select>
-        <option value="rey">Rey</option>
-        <option value="luke">Luke Skywalker</option>
-        <option value="leia">Leia Organa</option>
-        <option value="finn">Finn (FN-2187)</option>
-        <option value="kylo">Kylo Renn</option>
-      </select>
+      <ul>
+        {evens.map(num => <li key={num}>{num}</li>)}
+      </ul>
+      <Dropdown options={starWarsOptions} />
+      <Dropdown options={petOptions} />
       <button type="submit">Submit</button>
     </form>
   )
